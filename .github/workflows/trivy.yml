@@ -34,11 +34,11 @@ jobs:
         with:
           image-ref: 'programmer175/codecommune'
           format: 'template'
-          template: '@/contrib/html.tpl'
-          output: 'trivy-results.html'
+          template: '@/contrib/sarif.tpl'
+          output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
-          html_file: 'trivy-results.html'
+          html_file: 'trivy-results.sarif'
