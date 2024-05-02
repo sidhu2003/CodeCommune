@@ -6,8 +6,8 @@
 name: trivy
 
 on:
-  schedule:
-    - cron: '35 22 * * 5'
+  push:
+    branches: [ "main" ]
 
 permissions:
   contents: read
