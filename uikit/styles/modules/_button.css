@@ -8,7 +8,7 @@
   text-decoration: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  border: none;
+  border:3px solid transparent; 
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -22,6 +22,24 @@
   backface-visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
+
+@keyframes gradientBorder {
+  0% {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #A770EF, #CF8BF3, #FDB99B);
+  }
+  100% {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #A770EF, #CF8BF3, #FDB99B);
+    border-image-width: 3px; /* Set border image width to match the border width */
+  }
+}
+
+.btn:hover {
+  animation: gradientBorder 2s linear forwards; /* Apply animation on hover */
+  border-color: transparent; /* Remove solid border color */
+}
+
 
 .btn:disabled,
 .btn--disabled {
@@ -45,7 +63,7 @@
 .btn.btn--main--outline {
   background-color: transparent;
   color: var(--color-main);
-  border: 2px solid var(--color-main);
+  border: 3px solid transparent;
 }
 
 .btn--sub {
@@ -56,7 +74,7 @@
 .btn.btn--sub--outline {
   background-color: transparent;
   color: var(--color-sub);
-  border: 2px solid var(--color-sub);
+  border: 3px solid transparent;
 }
 
 .btn--sm {

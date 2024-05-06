@@ -53,9 +53,16 @@ img {
 }
 
 .header__menuItem > a {
-  color: var(--color-light);
+  color:white;
   font-weight: 300;
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
+
+.header__menuItem>a:hover{
+  color: orange;
+}
+
 
 .toggle-menu > span {
   display: none;
